@@ -1,9 +1,23 @@
-/*
- * Copyright (c) 2016. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
- * Morbi non lorem porttitor neque feugiat blandit. Ut vitae ipsum eget quam lacinia accumsan.
- * Etiam sed turpis ac ipsum condimentum fringilla. Maecenas magna.
- * Proin dapibus sapien vel ante. Aliquam erat volutpat. Pellentesque sagittis ligula eget metus.
- * Vestibulum commodo. Ut rhoncus gravida arcu.
- */
+apply plugin: 'java'
+repositories {
+    mavenCentral()
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
-apply plugin:'java'
+dependencies {
+    compile "joda-time:joda-time:2.2"
+}
+
+jar {
+    baseName = 'gradle-tutorial'
+    version =  '0.1.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'hello.HelloWorld'
